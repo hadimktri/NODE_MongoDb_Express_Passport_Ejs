@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Home</a>
+        <% if(user) { %>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link <%= path==='/products'? " active":'' %>" href="/products-list">Products</a>
+                    <a class="nav-link <%= path==='/cart'? " active":'' %>" href="/cart">Cart</a>
+                    <a class="nav-link <%= path==='/orders'? " active":'' %>" href="/orders">Orders</a>
+                    <a class="nav-link <%= path==='/add-product'? " active":'' %>" href="/admin/add-product">Add
+                        product</a>
+                    <a class="nav-link <%= path==='/admin/products'? " active":''%>" href="/admin/products">Admin
+                        Page</a>
+                </div>
+            </div>
+            <div class="navbar-nav me-2">
+                <a class="btn nav-link  <%=path==='/logOut' ? " active" :'' %>" href="/logOut">Logout</a>
+                <!-- <a class="btn nav-link  <%=path==='/profile' ? " active" :'' %>" href="profile">Profile</a> -->
+                <li class="nav-item">
+                    <a class="nav-link text-white py-1 " href="/profile">
+                        <img class=" nav-pic" src="<%= user.profileImage %>" alt="<%= user.profileImage %>">
+                    </a>
+                </li>
+            </div>
+            <% }else{ %>
+                <div class="navbar-nav me-2">
+                    <a class="nav-link  <%=path==='/logOut' ? " active" :'' %> " href="/login">Log In</a>
+                    <a class="nav-link  <%=path==='/signup' ? " active" :'' %>" href="/signup" >Sign Up</a>
+                </div>
+                <% } %>
+    </div>
+</nav>
+<main>

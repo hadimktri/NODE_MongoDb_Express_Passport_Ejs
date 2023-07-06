@@ -1,0 +1,59 @@
+<%- include('../includes/head.ejs') %>
+  <%- include('../includes/heading.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
+      <% if(products.length>0){ %>
+        <% products.forEach(p=> { %>
+          <div class="container py-5">
+            <div class="row justify-content-center mb-3">
+              <div class="col-md-12 col-xl-10">
+                <div class="card shadow-0 border rounded-3">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                        <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                          <img src="<%= p.productId.imageUrl %>" class="img-thumbnail" alt="" />
+                          <a href="#!">
+                            <div class="hover-overlay">
+                              <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-lg-6 col-xl-6">
+                        <h3>
+                          <%= p.productId.title %>
+                        </h3>
+                      </div>
+                      <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                        <div class="d-flex flex-row align-items-center mb-1">
+                          <h4 class="mb-1 me-1">
+                            <%= p.productId.price+"$" %>
+                          </h4>
+                        </div>
+                        <h4 class="text-success">
+                          <%= p.quantity %>
+                        </h4>
+                        <div class="d-flex flex-column mt-4">
+                          <form class="row btn  btn-sm" action="/cart-delete-item" method="post">
+                            <input type="hidden" value="<%=p.productId._id%>" name="productId">
+                            <button class="row btn btn-outline-danger btn-sm mt-2" type="submit">delete</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+              <div class="container row">
+                <form class="row btn  btn-sm" action="/create-order" method="post">
+                  <button class="row btn btn-outline-primary btn-sm mt-2" type="submit">Add to orders
+                  </button>
+                </form>
+              </div>
+              <% }else{ %>
+                <p>Cart is empty</p>
+                <% } %>
+
+                  <%- include('../includes/end.ejs') %>

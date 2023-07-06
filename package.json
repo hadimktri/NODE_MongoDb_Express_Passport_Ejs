@@ -1,0 +1,39 @@
+{
+  "name": "hm-ecom-node-js",
+  "version": "1.0.0",
+  "description": "this is my first app in node js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hadimktri/HM-SHOP-NODE-JS.git"
+  },
+  "author": "Hadi Mokhtari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hadimktri/HM-SHOP-NODE-JS/issues"
+  },
+  "homepage": "https://github.com/hadimktri/HM-SHOP-NODE-JS#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "connect-mongo": "^4.6.0",
+    "connect-mongodb-session": "^3.1.1",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.9.0",
+    "passport": "^0.6.0",
+    "passport-github": "^1.1.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}

@@ -1,0 +1,21 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.profile-pic {
+  width: 200px;
+  height: auto;
+  border-radius: 100px;
+}
+
+.nav-pic {
+  width: 40px;
+  height: auto;
+  border-radius: 100px;
+}
